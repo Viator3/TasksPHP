@@ -3,7 +3,7 @@
     ini_set('display_errors', 1);
     error_reporting(E_ALL);
 
-   if(!@copy('http://www.org.***/***_opt.zip','./test.zip'))
+   if(!@copy('http://www.org.***/test.zip','./test.zip'))
     {
         $errors= error_get_last();
         echo "COPY ERROR: ".$errors['type'];
@@ -25,7 +25,7 @@
 
 
 require_once 'PHPExcel.php';
-$pExcel = PHPExcel_IOFactory::load('unzip/'.'***_opt.xls');
+$pExcel = PHPExcel_IOFactory::load('unzip/'.'test.xls');
 
 // Цикл по листам Excel-файла
 foreach ($pExcel->getWorksheetIterator() as $worksheet) {
